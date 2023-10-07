@@ -8,9 +8,23 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
+
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext);
+    const {createUser, createUserGoogle} = useContext(AuthContext);
+
+    const handleRegisterWithGoogle = e => {
+        e.preventDefault();
+        console.log(e.currentTarget);
+        createUserGoogle ()
+        .then(result => {
+            console.log(result.user);
+            return (toast.success("Logging in with Google is successful!"));
+        })
+        .catch (error => {
+            console.error(error);
+        })
+    }
 
     const handleRegister = e => {
         e.preventDefault();
@@ -26,7 +40,7 @@ const Register = () => {
 
         if (!passRegex.test(password)) {
             // console.error('');
-            return (toast("Password must be at least 6 characters long, contain a capital letter and a special character."));
+            return (toast.warning("Password must be at least 6 characters long, contain a capital letter and a special character."));
         }
 
 
@@ -63,10 +77,9 @@ const Register = () => {
                             </div>
                             <div className="form-control mt-6">
                             <button className="btn btn-outline">Register</button>
-
-                            <ToastContainer></ToastContainer>
                             </div>
-                        </form>   
+                        </form>  
+                        <ToastContainer></ToastContainer> 
                 </div>
 
                 <div className="hero">
@@ -74,7 +87,7 @@ const Register = () => {
                         <div>
                         <h1 className="text-5xl font-bold">Register to Explore!</h1>
                         <p className="py-6">Effortlessly log in to our exclusive social event management website.</p>
-                        <button className="btn btn-outline">Register with Google</button>
+                        <button onClick={handleRegisterWithGoogle}  className="btn btn-outline">Register with Google</button>
                         <p className="py-6">Already have a account? PLease proceed to <Link className="text-blue-900 font-bold" to='/login' >Login</Link></p>
                         </div>
                     </div>

@@ -15,6 +15,8 @@ import Register from './Forms/Register';
 import Login from './Forms/Login';
 import AuthProvider from './AuthProvider/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Booking from './Booking/Booking';
+import Profile from './Profile/Profile';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +49,14 @@ const router = createBrowserRouter([
       {
         path:'/login',
         element:<Login></Login>
+      },
+      {
+        path: '/booking',
+        element: <PrivateRoute><Booking></Booking></PrivateRoute>
+      },
+      {
+        path: '/profile',
+        element:<PrivateRoute><Profile></Profile></PrivateRoute>
       }
 
     ]

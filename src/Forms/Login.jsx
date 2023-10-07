@@ -9,7 +9,21 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
-    const {signIn} = useContext(AuthContext);
+    const {signIn, createUserGoogle} = useContext(AuthContext);
+
+
+    const handleLogInWithGoogle = e => {
+        e.preventDefault();
+        console.log(e.currentTarget);
+        createUserGoogle ()
+        .then(result => {
+            console.log(result.user);
+            return (toast.success("Logging in with Google is successful!"));
+        })
+        .catch (error => {
+            console.error(error);
+        })
+    }
 
     const handleLogIn = e => {
         e.preventDefault();
@@ -24,10 +38,16 @@ const Login = () => {
         signIn(email, password)
         .then(result => {
             console.log(result.user);
-            return (toast("Logged in successfully!"));
+            return (toast.success("Logging in using Email is successful!"));
         })
         .catch(error => {
             console.error(error);
+            if (error.code === "auth/invalid-login-credentials") {
+                toast.error("Incorrect password or email. Please try again.");
+              } else {
+                toast.error("An error occurred while logging in. Please try again later.");
+              }
+        
         })
     }
 
@@ -56,9 +76,9 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-6">
                             <button className="btn btn-outline">Login</button>
-                            <ToastContainer></ToastContainer>
                             </div>
-                        </form>   
+                        </form> 
+                        <ToastContainer></ToastContainer>  
                 </div>
 
                 <div className="hero">
@@ -66,7 +86,8 @@ const Login = () => {
                         <div>
                         <h1 className="text-5xl font-bold">Login to Access!</h1>
                         <p className="py-6">Effortlessly log in to our exclusive social event management website.</p>
-                        <button className="btn btn-outline">Login with Google</button>
+                        <button onClick={handleLogInWithGoogle} className="btn btn-outline">Login with Google</button>
+                        <ToastContainer></ToastContainer>
                         <p className="py-6">Do not have a account? PLease proceed to <Link className="text-blue-900 font-bold" to='/register' >Register</Link></p>
                         </div>
                     </div>
