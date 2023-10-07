@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import Footer from "../Home/Footer";
 import Navbar from "../Home/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,6 +12,8 @@ import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
 
     const {createUser, createUserGoogle} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleRegisterWithGoogle = e => {
         e.preventDefault();
@@ -19,6 +21,7 @@ const Register = () => {
         createUserGoogle ()
         .then(result => {
             console.log(result.user);
+            navigate(location?.state ? location.state : '/')
             return (toast.success("Logging in with Google is successful!"));
         })
         .catch (error => {
@@ -40,13 +43,13 @@ const Register = () => {
 
         if (!passRegex.test(password)) {
             // console.error('');
+            navigate(location?.state ? location.state : '/')
             return (toast.warning("Password must be at least 6 characters long, contain a capital letter and a special character."));
         }
-
-
         createUser(email,password)
         .then(result => {
             console.log(result.user)
+            navigate(location?.state ? location.state : '/')
         })
         .catch(error => {
             console.error(error)

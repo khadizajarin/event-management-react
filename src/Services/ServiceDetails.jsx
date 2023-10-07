@@ -19,12 +19,12 @@ const ServiceDetails = () => {
             <Navbar></Navbar>
             
 
-            <div className="grid grid-cols-3 max-w-7xl mx-auto my-11">
+            <div className="grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto my-11">
                 <div >
                     <img src={event.image} alt="" className="object-center rounded-2xl" />
                 </div>
-                <div className="col-span-2 ml-10">
-                    <p className="text-5xl">{event.name}</p>
+                <div className="col-span-2  text-center">
+                    <p className="text-5xl mt-4">{event.name}</p>
                     <p className="text-3xl mt-4">{event.price}</p>
                     <p className="mt-4">{event.description}</p>
                     <p className="mt-4 btn btn-outline">{event.button}</p>
