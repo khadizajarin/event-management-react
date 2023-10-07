@@ -1,0 +1,51 @@
+[
+    {
+      "id": "1",
+      "name": "Summer Music Festival",
+      "image": "https://media.istockphoto.com/id/1182518695/photo/blurred-outdoor-background.jpg?s=2048x2048&w=is&k=20&c=AvQtYAT18zp4vxP_j3iS2PndWVrJ8Xw9vj9MFwtWem0=",
+      "price": "$250.99",
+      "description": "Join us for a day of live music and fun at the Summer Music Festival.",
+      "button": "Buy Tickets"
+    },
+    {
+      "id": "2",
+      "name": "Hope for a Cause Gala",
+      "image": "https://media.istockphoto.com/id/1372606861/photo/volunteers-hand-giving-donations-to-a-person-at-a-community-center.jpg?s=2048x2048&w=is&k=20&c=7anV6IB06m8HkzZ9NxP6wh10JnhRK8RrKmkU644iTGg=",
+      "price": "$100.00",
+      "description": "Support a noble cause at the Hope for a Cause Gala. An evening of elegance and giving.",
+      "button": "Donate Now"
+    },
+    {
+      "id": "3",
+      "name": "DIY Home Improvement Workshop",
+      "image": "https://media.istockphoto.com/id/1714621575/photo/creative-activity-of-making-candles-woman-making-candles-from-beeswax-production.jpg?s=2048x2048&w=is&k=20&c=0Sefk74yK6Pa88KpCpz8_H36La8focZ0zvmQDV4V4Oo=",
+      "price": "$200.00",
+      "description": "Learn valuable DIY skills at our Home Improvement Workshop. Admission is free!",
+      "button": "Register Now"
+    },
+    {
+      "id": "4",
+      "name": "Tech Innovators Summit",
+      "image": "https://media.istockphoto.com/id/1480320861/photo/asian-indian-woman-in-wheelchair-trying-vr-goggle-during-business-conference-seminar-in.jpg?s=2048x2048&w=is&k=20&c=WBOTkxL5qfMUw_Z3G4je16DTGi4R2TbcQIwo0PTBzxU=",
+      "price": "$199.99",
+      "description": "Stay updated on the latest tech trends at the Tech Innovators Summit.",
+      "button": "Register"
+    },
+    {
+      "id": "5",
+      "name": "International Food Fest",
+      "image": "https://media.istockphoto.com/id/1387272964/photo/beer-fest-mix-of-geman-food-in-wood-table.jpg?s=2048x2048&w=is&k=20&c=CYQkrKzdtwrXEQZy3FXGBCGEM92aMMPRjJgGUSSuxxY=",
+      "price": "$189.00",
+      "description": "Explore cuisines from around the world at the International Food Fest.",
+      "button": "Get Tickets"
+    },
+    {
+      "id": "6",
+      "name": "Business Networking Mixer",
+      "image": "https://media.istockphoto.com/id/1086864452/photo/control-and-mix-sound-through-the-tablet-screen.jpg?s=2048x2048&w=is&k=20&c=3x3OWWGiyedVjDwlP8_u-ZmNX7LSR0X3cDVGTyWpwXU=",
+      "price": "$350.00",
+      "description": "Expand your professional network at our Business Networking Mixer.",
+      "button": "RSVP"
+    }
+  ]
+  
