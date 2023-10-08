@@ -26,14 +26,14 @@ const Home = () => {
                             <h3 className="text-xl font-semibold mb-2 text-gray-700">Autumn Music festival</h3>
                             <p className="text-gray-900">Date: June 15, 2023</p>
                             <p className="text-gray-900">Time: 2:00 PM - 5:00 PM</p>
-                            <p className="text-gray-900 mt-4">Join us for a day of music, fun, and good vibes! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget massa id libero tincidunt condimentum.</p>
+                            <p className="text-gray-900 mt-4">Join us for a day of music, fun, and good vibes! </p>
                             <a href="" className="text-blue-500 mt-4 inline-block">Learn More</a>
                         </div>
                         <div className="bg-gray-100 p-6 rounded shadow-lg" data-aos="fade-up" data-aos-delay="200">
                             <h3 className="text-xl font-semibold mb-2 text-gray-700">Art Exhibition Opening</h3>
                             <p className="text-gray-900">Date: July 10, 2023</p>
                             <p className="text-gray-900">Time: 4:00 PM - 7:00 PM</p>
-                            <p className="text-gray-900 mt-4">Discover the world of contemporary art at our exhibition opening event. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus commodo odio in metus eleifend, sed interdum lorem euismod.</p>
+                            <p className="text-gray-900 mt-4">Discover the world of contemporary art at our exhibition opening event. </p>
                             <a href="#" className="text-blue-500 mt-4 inline-block">Learn More</a>
                         </div>
 
@@ -41,7 +41,7 @@ const Home = () => {
                             <h3 className="text-xl font-semibold mb-2 text-gray-700">Culinary Workshop</h3>
                             <p className="text-gray-900">Date: August 20, 2023</p>
                             <p className="text-gray-900">Time: 10:00 AM - 2:00 PM</p>
-                            <p className="text-gray-900 mt-4">Learn the art of cooking from expert chefs at our culinary workshop. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt velit a libero iaculis venenatis.</p>
+                            <p className="text-gray-900 mt-4">Learn the art of cooking from expert chefs at our culinary workshop. g elit.</p>
                             <a href="#" className="text-blue-500 mt-4 inline-block">Learn More</a>
                         </div>
                     </div>

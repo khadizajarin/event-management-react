@@ -1,15 +1,16 @@
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 import { Link } from "react-router-dom";
 
 const Service = ({ events }) => {
   const { id, name, price, image, description ,button} = events;
 
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-offset="200" >
       <Link to={`/events/${id}`}>
-        <div className="card card-compact bg-base-100 shadow-xl">
+        <div className="card card-compact h-96 bg-base-100 shadow-xl">
           <figure>
-            <img src={image} alt="Shoes" />
+            <img src={image} className="h-96 w-full" alt="" />
           </figure>
           <div className="card-body">
             <h2 className="card-title">{name}</h2>

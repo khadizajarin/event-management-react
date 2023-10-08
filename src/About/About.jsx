@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h2 className="text-6xl">This is ABout route</h2>
+            <h2 className="text-6xl text-center">This is About route</h2>
         </div>
     );
 };

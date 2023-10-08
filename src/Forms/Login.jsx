@@ -8,10 +8,17 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
-
-    const {signIn, createUserGoogle} = useContext(AuthContext);
+    const { signIn, createUserGoogle, locationState, setLocationState } = useContext(AuthContext);
     const location = useLocation();
+    console.log(location);
     const navigate = useNavigate();
+
+    // Pass location.state as a prop when navigating to Register component
+    const goToRegister = () => {
+        setLocationState(location.state);
+        navigate('/register');
+        console.log(location.state);
+    }
 
 
     const handleLogInWithGoogle = e => {
@@ -93,7 +100,7 @@ const Login = () => {
                         <p className="py-6">Effortlessly log in to our exclusive social event management website.</p>
                         <button onClick={handleLogInWithGoogle} className="btn btn-outline">Login with Google</button>
                         <ToastContainer></ToastContainer>
-                        <p className="py-6">Do not have a account? PLease proceed to <Link className="text-blue-900 font-bold" to='/register' >Register</Link></p>
+                        <p className="py-6">Do not have a account? PLease proceed to <span className="text-blue-900 font-bold" to='/register' onClick={goToRegister} >Register</span></p>
                         </div>
                     </div>
                 </div>

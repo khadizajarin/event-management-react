@@ -1,54 +1,37 @@
 import { useContext } from "react";
 import Footer from "../Home/Footer";
 import Navbar from "../Home/Navbar";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 
-
 const Register = () => {
-
-    const {createUser, createUserGoogle} = useContext(AuthContext);
-    const location = useLocation();
+    const { createUser, locationState } = useContext(AuthContext); 
+    console.log("location in register page ", locationState );
     const navigate = useNavigate();
 
-    const handleRegisterWithGoogle = e => {
-        e.preventDefault();
-        console.log(e.currentTarget);
-        createUserGoogle ()
-        .then(result => {
-            console.log(result.user);
-            navigate(location?.state ? location.state : '/')
-            // return (toast.success("Logging in with Google is successful!"));
-        })
-        .catch (error => {
-            console.error(error);
-        })
-    }
 
     const handleRegister = e => {
         e.preventDefault();
-        // console.log(e.currentTarget);
 
         const form = new FormData(e.currentTarget);
-
         const email = form.get('email');
         const password = form.get('password');
 
+    
         const passRegex =  /^(?=.*[A-Z])(?=.*[\W_]).{6,}$/;
 
         if (!passRegex.test(password)) {
-            // console.error();
-            navigate(location?.state ? location.state : '/')
             return (toast.warning("Password must be at least 6 characters long, contain a capital letter and a special character."));
         }
+
         createUser(email,password)
         .then(result => {
             console.log(result.user)
-            navigate(location?.state ? location.state : '/')
+            navigate(locationState? locationState : '/')
             return (toast.success("Registered with Google!"));
         })
         .catch(error => {
@@ -82,7 +65,7 @@ const Register = () => {
                             <button className="btn btn-outline">Register</button>
                             </div>
                         </form>  
-                        <ToastContainer></ToastContainer> 
+                        {/* <ToastContainer></ToastContainer>  */}
                 </div>
 
                 <div className="hero">
@@ -90,14 +73,15 @@ const Register = () => {
                         <div>
                         <h1 className="text-5xl font-bold">Register to Explore!</h1>
                         <p className="py-6">Effortlessly log in to our exclusive social event management website.</p>
-                        <button onClick={handleRegisterWithGoogle}  className="btn btn-outline">Register with Google</button>
-                        <ToastContainer></ToastContainer>
+                        {/* <button onClick={handleRegisterWithGoogle}  className="btn btn-outline">Register with Google</button>
+                        <ToastContainer></ToastContainer> */}
                         <p className="py-6">Already have a account? PLease proceed to <Link className="text-blue-900 font-bold" to='/login' >Login</Link></p>
                         </div>
                     </div>
                 </div>
             </div>
             <Footer></Footer>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
