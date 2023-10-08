@@ -1,4 +1,8 @@
-Creating a social event management website with the mentioned features involves a combination of front-end and back-end development, as well as user authentication. Here's a high-level overview of the steps one can take to implement these features:
+Creating a social event management website with the mentioned features involves a combination of front-end and back-end development, as well as user authentication.
+
+The Website can be accessed here : https://starlit-narwhal-c16877.netlify.app/
+ 
+Here's a high-level overview of the steps one can take to implement these features:
 
 1. Front-End Structure:
    - Design the home page with a navigation bar, banner/slider, services section, and footer. Implement active routes on the navigation bar to highlight the current page.
