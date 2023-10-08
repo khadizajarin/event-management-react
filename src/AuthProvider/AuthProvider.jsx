@@ -3,6 +3,7 @@ import app from "../firebase/firebase.config";
 import { createContext, useEffect, useState } from "react";
 
 
+
 export const AuthContext = createContext(null);
 
 const auth = getAuth(app);
@@ -16,7 +17,7 @@ const AuthProvider = ({children}) => {
     const provider = new GoogleAuthProvider();
     const createUserGoogle = () => {
         setLoading(true);
-         return signInWithPopup(auth, provider);
+        return signInWithPopup(auth, provider);
     }
 
     //create user for register route

@@ -1,5 +1,5 @@
 {
-  "name": "assignment-09",
+  "name": "q",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,6 +12,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "firebase": "^10.4.0",
+    "firebase-tools": "^12.6.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
@@ -33,5 +34,9 @@
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3",
     "vite": "^4.4.5"
-  }
+  },
+  "description": "Creating a social event management website with the mentioned features involves a combination of front-end and back-end development, as well as user authentication. Here's a high-level overview of the steps one can take to implement these features:",
+  "main": "postcss.config.js",
+  "author": "",
+  "license": "ISC"
 }

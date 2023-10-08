@@ -22,7 +22,7 @@ const Register = () => {
         .then(result => {
             console.log(result.user);
             navigate(location?.state ? location.state : '/')
-            return (toast.success("Logging in with Google is successful!"));
+            // return (toast.success("Logging in with Google is successful!"));
         })
         .catch (error => {
             console.error(error);
@@ -31,18 +31,17 @@ const Register = () => {
 
     const handleRegister = e => {
         e.preventDefault();
-        console.log(e.currentTarget);
+        // console.log(e.currentTarget);
 
         const form = new FormData(e.currentTarget);
 
         const email = form.get('email');
         const password = form.get('password');
 
-        const passRegex =  /^(?=.*[A-Z])(?=.*[\W_]).{6,}$/
-        ;
+        const passRegex =  /^(?=.*[A-Z])(?=.*[\W_]).{6,}$/;
 
         if (!passRegex.test(password)) {
-            // console.error('');
+            // console.error();
             navigate(location?.state ? location.state : '/')
             return (toast.warning("Password must be at least 6 characters long, contain a capital letter and a special character."));
         }
@@ -50,6 +49,7 @@ const Register = () => {
         .then(result => {
             console.log(result.user)
             navigate(location?.state ? location.state : '/')
+            return (toast.success("Registered with Google!"));
         })
         .catch(error => {
             console.error(error)
@@ -91,6 +91,7 @@ const Register = () => {
                         <h1 className="text-5xl font-bold">Register to Explore!</h1>
                         <p className="py-6">Effortlessly log in to our exclusive social event management website.</p>
                         <button onClick={handleRegisterWithGoogle}  className="btn btn-outline">Register with Google</button>
+                        <ToastContainer></ToastContainer>
                         <p className="py-6">Already have a account? PLease proceed to <Link className="text-blue-900 font-bold" to='/login' >Login</Link></p>
                         </div>
                     </div>

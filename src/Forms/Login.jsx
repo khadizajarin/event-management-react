@@ -20,9 +20,9 @@ const Login = () => {
         createUserGoogle ()
         .then(result => {
             console.log(result.user);
-            navigate(location?.state? location.state : '/')
-            console.log(location)
-            return (toast.success("Logging in with Google is successful!"));
+            navigate(location?.state? location.state : '/');
+            console.log(location);
+            toast("Logging in with Google is successful!");
         })
         .catch (error => {
             console.error(error);
@@ -42,8 +42,8 @@ const Login = () => {
         signIn(email, password)
         .then(result => {
             console.log(result.user);
-            navigate(location?.state? location.state : '/')
-            return (toast.success("Logging in using Email is successful!"));
+            navigate(location?.state? location.state : '/');    
+            toast("Logging in using Email is successful!");
         })
         .catch(error => {
             console.error(error);
@@ -99,6 +99,8 @@ const Login = () => {
                 </div>
             </div>
             <Footer></Footer>
+
+            
         </div>
     );
 };
