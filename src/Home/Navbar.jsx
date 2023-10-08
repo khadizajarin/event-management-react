@@ -21,18 +21,18 @@ const Navbar = () => {
 
     const links = <>
         <li><NavLink to = "/" style={({ isActive }) => ({ 
-                            color: isActive ? 'Blue' : '' })}>Home</NavLink></li>
+                            color: isActive ? 'white' : '' })}>Home</NavLink></li>
         <li><NavLink to = "/services" style={({ isActive }) => ({ 
-                            color: isActive ? 'Blue' : '' })}>Services</NavLink></li>
+                            color: isActive ? 'white' : '' })}>Services</NavLink></li>
         <li><NavLink to = "/about" style={({ isActive }) => ({ 
-                            color: isActive ? 'Blue' : '' })}>About</NavLink></li>
+                            color: isActive ? 'white' : '' })}>About</NavLink></li>
         {
             user &&
             <>
                 <li><NavLink to = "/booking" style={({ isActive }) => ({ 
-                            color: isActive ? 'Blue' : '' })}>Booking</NavLink></li>
+                            color: isActive ? 'white' : '' })}>Booking</NavLink></li>
                 <li><NavLink to = "/profile" style={({ isActive }) => ({ 
-                            color: isActive ? 'Blue' : '' })}>Profile</NavLink></li>
+                            color: isActive ? 'white' : '' })}>Profile</NavLink></li>
             </>
         }
     </>

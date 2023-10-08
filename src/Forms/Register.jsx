@@ -35,7 +35,11 @@ const Register = () => {
             return (toast.success("Registered with Google!"));
         })
         .catch(error => {
-            console.error(error)
+            console.error(error);
+            if (error.code === "auth/email-already-in-use") {
+                toast.error("Email is already in use!");
+              } 
+        
         })
     }
 
